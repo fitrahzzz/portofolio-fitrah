@@ -17,9 +17,11 @@ body::before {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* lapisan gelap */
+  background: rgba(11, 1, 15, 0.6); /* lapisan gelap */
   z-index: -1;
 }
+
+
 
 .hero {
   display: flex;
@@ -47,10 +49,10 @@ body::before {
 @keyframes glowing-text {
   0% {
     text-shadow:
-      0 0 5px #7f00ff,
+      0 0 5px #ffffff,
       0 0 10px #7f00ff,
       0 0 20px #7f00ff,
-      0 0 40px #8a2be2;
+      0 0 40px #ffffff;
   }
   50% {
     text-shadow:
@@ -147,6 +149,48 @@ body::before {
   }
 }
 
+.skills {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.skill-box {
+   background: linear-gradient(to left, #0d0058, #36013f);
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 30px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-box:hover {
+  transform: translateY(-5px);
+  background-color: #e0e0ff;
+}
+
+/* Responsif untuk layar HP */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 a {
@@ -218,6 +262,18 @@ a:hover {
   width: 100%;
 }
 
+/* Animasi fade-out untuk efek saat klik menu */
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
 
 /* Hero */
 .hero {
@@ -272,6 +328,7 @@ a:hover {
 }
 
 
+
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -280,7 +337,7 @@ a:hover {
 }
 
 .skill-item {
-   background: linear-gradient(to right, #240038, #550064);
+  background: linear-gradient(to right, #240038, #550064);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   padding: 20px;
@@ -332,6 +389,26 @@ h2 {
 .gallery-item:hover img {
   transform: scale(1.08) rotate3d(0.5, 1, 0, 10deg);
 }
+
+.gallery-item {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.project-title {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
 
 .contact-list {
   display: grid;
