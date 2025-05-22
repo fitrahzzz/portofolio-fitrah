@@ -260,8 +260,19 @@ a:hover {
   max-width: 1000px;
   margin: auto;
   padding: 0 20px;
-   text-align: justify;
+  text-align: justify;
+  width: 100%; /* Tambahan ini membuat container fleksibel */
+  box-sizing: border-box; /* Pastikan padding tidak membuat overflow */
 }
+
+/* Tambahan untuk layar HP */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 10px; /* Lebih sempit di HP */
+    font-size: 16px;  /* Ukuran teks yang lebih nyaman di layar kecil */
+  }
+}
+
 
 .skill-grid {
   display: grid;
